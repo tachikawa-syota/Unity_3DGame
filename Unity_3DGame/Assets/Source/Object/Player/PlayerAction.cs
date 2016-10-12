@@ -3,19 +3,21 @@ using System.Collections;
 
 public class PlayerAction : MonoBehaviour {
 
-
     // アニメーション
     private Animator m_animation;
     private AnimatorStateInfo m_animatorInfo;
 	private float m_length;
 	private float m_Cur;
 
-    float m_speed = 10;
+    public float m_spped = 0.07f;
+    public float m_gravity = 0.1f;
 
     // Use this for initialization
     void Start()
     {
         m_animation = GetComponent<Animator>();
+        // 初期アニメーション
+        m_animation.Play("Idle");
         m_animation.SetBool("Walk", false);
 		m_animation.SetBool("Attack", false);
 
@@ -44,15 +46,17 @@ public class PlayerAction : MonoBehaviour {
 
     void FixedUpdate()
     {
-        //  入力をxとzに代入
+        // プレイヤーの向き
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown("a"))
+        // マウス右クリック
+        if (Input.GetMouseButton(0))
         {
-			if(!Attack())return;
+            if (!Attack())return;
         }
 
+        // 入力判定
         if (x != 0.0f || z != 0.0f)
         {
             m_animation.SetBool("Walk", true);
@@ -65,9 +69,7 @@ public class PlayerAction : MonoBehaviour {
         // 同一のGameObjectが持つRigidbodyコンポーネントを取得
         Rigidbody rigidbody = GetComponent<Rigidbody>();
 
-        rigidbody.position += new Vector3(x * 0.1f, -0.1f, z * 0.1f);
+       rigidbody.position += new Vector3(x * m_spped, -m_gravity, z * m_spped);
 
-        // rigidbodyのx軸（横）とz軸（奥）に力を加える
-//        rigidbody.AddForce(x * m_speed, 0, z * m_speed);
     }
 }

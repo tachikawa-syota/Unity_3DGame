@@ -58,7 +58,7 @@
      <Compile Include="Assets\Model\UnityChan\Scripts\ThirdPersonCamera.cs" />
      <Compile Include="Assets\Model\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
      <Compile Include="Assets\Model\UnityChan\SplashScreen\Scripts\SplashScreen.cs" />
-     <Compile Include="Assets\Source\Object\Camera\FollowPlayer.cs" />
+     <Compile Include="Assets\Source\Object\Camera\Camera.cs" />
      <Compile Include="Assets\Source\Object\Player\PlayerAction.cs" />
      <None Include="Assets\Model\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\Model\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
