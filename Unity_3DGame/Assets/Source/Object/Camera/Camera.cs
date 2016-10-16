@@ -3,10 +3,10 @@ using System.Collections;
 
 public class Camera : MonoBehaviour
 {
-
-    public Transform m_target;    // ターゲットへの参照
-    private Vector3 offset;     // 相対座標
-
+    // ターゲット
+    public Transform m_target;
+    // 相対座標
+    private Vector3 offset;
     // 注視点の高さ
     public float m_height = 0.3f;
     // カメラとプレイヤーとの距離
@@ -35,7 +35,6 @@ public class Camera : MonoBehaviour
         {
             // 回転
             transform.RotateAround(lookAt, Vector3.up, rotX);
-
 
             // カメラがプレイヤーの真上や真下にあるときにそれ以上回転させないようにする
             if (transform.forward.y > 0.9f && rotY < 0)
