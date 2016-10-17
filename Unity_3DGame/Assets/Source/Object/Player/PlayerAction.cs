@@ -16,6 +16,9 @@ public class PlayerAction : MonoBehaviour
     public float m_moveSpeed = 0.07f;
     public float m_gravity = 0.1f;
 
+    // 1フレーム前の座標
+    private Vector3 m_oldPos;
+
     // Use this for initialization
     void Start()
     {
@@ -34,7 +37,8 @@ public class PlayerAction : MonoBehaviour
         // プレイヤーの向き
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        
+        m_oldPos = m_rigidbody.position;
+
         // マウス右クリック
         if (Input.GetMouseButtonDown(0))
         {
@@ -47,7 +51,7 @@ public class PlayerAction : MonoBehaviour
         }
 
         // ジャンプ
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             m_animation.SetBool("Jump", true);
         }
@@ -66,7 +70,6 @@ public class PlayerAction : MonoBehaviour
             m_animation.SetBool("Walk", false);
         }
 
-        UpdateRotation();
 
        Vector3 forward = m_camera.transform.TransformDirection(Vector3.forward);
        Vector3 right = m_camera.transform.TransformDirection(Vector3.right);
@@ -75,22 +78,26 @@ public class PlayerAction : MonoBehaviour
        Vector3 moveDirection = horizontal * right + vertical * forward;
        moveDirection *= m_moveSpeed;
        m_rigidbody.position += moveDirection;
+       UpdateRotation();
     }
 
     void UpdateRotation()
     {
-        Vector3 right = m_camera.transform.TransformDirection(Vector3.right);
-         float horizontal = Input.GetAxis("Horizontal");
+        Vector3 diff =  m_rigidbody.position - m_oldPos;
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
 
-        if(horizontal >= 0.2f)
+        diff.Normalize();
+
+        if(horizontal <= 0.4f)
         {
-// 調整中
+      //     right = m_camera.transform.TransformDirection(Vector3.right);
         }
 
-        if (m_oldCameraAngle != m_camera.transform.localEulerAngles)
+       if(diff.x >= 0.00000000001f || diff.z >= 0.00000000001f)
         {
             // カメラの回転に合わせてプレイヤーも回転させる
-            m_rigidbody.transform.rotation = Quaternion.Euler(0, m_camera.transform.localEulerAngles.y, 0);
+            m_rigidbody.transform.rotation = Quaternion.LookRotation(new Vector3(diff.x, 0, diff.z));
         }
 
        // カメラの角度を保存 
