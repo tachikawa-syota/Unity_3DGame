@@ -12,7 +12,6 @@ public class CollisionCheck : MonoBehaviour
         if (col.gameObject.CompareTag("CollisionObject"))
         {
             Debug.Log("HIT");
-            col.gameObject.GetComponent<>;
         }
     }
 }
