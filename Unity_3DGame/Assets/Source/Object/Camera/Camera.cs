@@ -3,8 +3,10 @@ using System.Collections;
 
 public class Camera : MonoBehaviour
 {
+    GameMain m_gameMain;
+
     // ターゲット
-    public Transform m_target;
+ //   public Transform m_target;
     // 相対座標
     private Vector3 offset;
     // 注視点の高さ
@@ -13,11 +15,12 @@ public class Camera : MonoBehaviour
     public float m_distanceToPlayer = 2.0f;
     // カメラを横にスライドさせる；プラスの時右へ，マイナスの時左へ
     public float m_slideDistance = 0f;       
-
+    
     void Start()
     {
+        m_gameMain = GetComponent<GameMain>();
         //自分自身とtargetとの相対距離を求める
-        offset = GetComponent<Transform>().position - m_target.position;
+        offset = GetComponent<Transform>().position - m_gameMain.GetPlayerPos();
         offset.y += 0.2f;
     }
 
@@ -29,7 +32,7 @@ public class Camera : MonoBehaviour
         float rotY = Input.GetAxis("Mouse Y") * Time.deltaTime * RotationSensitivity;
         rotY *= -1f;
 
-        Vector3 lookAt = m_target.position + Vector3.up * m_height;
+        Vector3 lookAt = m_gameMain.GetPlayerPos() + Vector3.up * m_height;
 
         if (Input.GetMouseButton(1))
         {
@@ -57,9 +60,5 @@ public class Camera : MonoBehaviour
 
         // カメラを横にずらして中央を開ける
         transform.position = transform.position + transform.right * m_slideDistance;
-
-        // 自分自身の座標に、targetの座標に相対座標を足した値を設定する
-   //     GetComponent<Transform>().position = m_target.position + offset;
-    //    GetComponent<Transform>().transform.rotation = Quaternion.Euler(0, m_target.transform.localEulerAngles.y, 0);
     }
 }

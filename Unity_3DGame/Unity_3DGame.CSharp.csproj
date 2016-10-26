@@ -78,6 +78,7 @@
     <Compile Include="Assets\Model\UnityChan\SplashScreen\Scripts\SplashScreen.cs" />
     <Compile Include="Assets\Source\Collision\CollisionCheck.cs" />
     <Compile Include="Assets\Source\Object\Camera\Camera.cs" />
+    <Compile Include="Assets\Source\Object\Enemy\EnemyAction.cs" />
     <Compile Include="Assets\Source\Object\Player\PlayerAction.cs" />
     <Compile Include="Assets\Source\Scene\GameMain.cs" />
   </ItemGroup>
