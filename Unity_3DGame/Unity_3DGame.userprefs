@@ -1,9 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Source\Object\Camera\Camera.cs">
     <Files>
       <File FileName="Assets\Source\Object\Player\PlayerAction.cs" Line="1" Column="1" />
       <File FileName="Assets\Source\Object\Camera\Camera.cs" Line="19" Column="17" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Source\Scene\GameMain.cs">
+    <Files>
+      <File FileName="Assets\Source\Object\Player\PlayerAction.cs" Line="95" Column="28" />
+      <File FileName="Assets\Source\Object\Camera\Camera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Source\Collision\CollisionEffect.cs" Line="19" Column="1" />
+      <File FileName="Assets\Source\Scene\GameMain.cs" Line="30" Column="2" />
+>>>>>>> 25f13476ad0490454e456562079790d5f65ac23d
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

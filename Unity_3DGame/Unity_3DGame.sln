@@ -7,12 +7,18 @@ Project("{A4CF4D65-16E1-CF24-D118-9AE15C45C371}") = "Unity_3DGame", "Assembly-CS
 EndProject
 Project("{A4CF4D65-16E1-CF24-D118-9AE15C45C371}") = "Unity_3DGame", "Assembly-UnityScript.unityproj", "{8D175FD5-E39A-0E2B-4D1F-FEA81867746D}"
 EndProject
+Project("{A4CF4D65-16E1-CF24-D118-9AE15C45C371}") = "Unity_3DGame", "Assembly-UnityScript.unityproj", "{8D175FD5-E39A-0E2B-4D1F-FEA81867746D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 25f13476ad0490454e456562079790d5f65ac23d
 		{174DD68F-5386-2F3E-F22E-B2C438AFF47C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{174DD68F-5386-2F3E-F22E-B2C438AFF47C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{174DD68F-5386-2F3E-F22E-B2C438AFF47C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -25,6 +31,19 @@ Global
 		{8D175FD5-E39A-0E2B-4D1F-FEA81867746D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D175FD5-E39A-0E2B-4D1F-FEA81867746D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D175FD5-E39A-0E2B-4D1F-FEA81867746D}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
+=======
+=======
+		{ACE2AEED-4E96-BF39-7657-C98462BE0188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE2AEED-4E96-BF39-7657-C98462BE0188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE2AEED-4E96-BF39-7657-C98462BE0188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE2AEED-4E96-BF39-7657-C98462BE0188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12FB1378-2B01-41E3-E64C-C23A79CE4F84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12FB1378-2B01-41E3-E64C-C23A79CE4F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12FB1378-2B01-41E3-E64C-C23A79CE4F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12FB1378-2B01-41E3-E64C-C23A79CE4F84}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> a1691e30ab729bfcdc5fa4f170496d264d1b830a
+>>>>>>> 25f13476ad0490454e456562079790d5f65ac23d
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
